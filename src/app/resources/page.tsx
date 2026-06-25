@@ -10,12 +10,9 @@ import {
   Video,
   FileText,
   Link2,
-  ArrowRight,
   Clock,
-  Users,
   Star
 } from 'lucide-react';
-import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
 
 interface Resource {
@@ -163,6 +160,7 @@ export default function ResourcesPage() {
     return matchesCategory && matchesType && matchesSearch;
   });
 
+  // Fixed: Removed transition property
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -174,12 +172,12 @@ export default function ResourcesPage() {
     },
   };
 
+  // Fixed: Removed transition property
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
     },
   };
 
