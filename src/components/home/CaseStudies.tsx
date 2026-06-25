@@ -80,11 +80,13 @@ const projects: Project[] = [
   }
 ];
 
+const categories = ['All', 'Security', 'Enterprise HR', 'Education Technology', 'E-Commerce'];
+
 export default function CaseStudies() {
   const [activeProject, setActiveProject] = useState<string | null>(null);
   const [filter, setFilter] = useState<string>('all');
 
-  const categories = ['all', ...new Set(projects.map(p => p.category))];
+  const categoryList = ['all', ...new Set(projects.map(p => p.category))];
 
   const filteredProjects = filter === 'all' 
     ? projects 
@@ -143,7 +145,7 @@ export default function CaseStudies() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="flex flex-wrap justify-center gap-3 mb-12"
         >
-          {categories.map((category) => (
+          {categoryList.map((category) => (
             <button
               key={category}
               onClick={() => setFilter(category)}

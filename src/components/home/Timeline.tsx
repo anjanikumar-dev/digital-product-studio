@@ -111,9 +111,9 @@ export default function Timeline() {
         </motion.div>
 
         {/* Timeline */}
-        <div className="relative max-w-5xl mx-auto">
-          {/* Vertical Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-orange-500" />
+        <div className="relative max-w-4xl mx-auto">
+          {/* Vertical Line - Centered */}
+          <div className="absolute left-5 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-orange-500" />
 
           <motion.div
             variants={containerVariants}
@@ -126,30 +126,25 @@ export default function Timeline() {
               <motion.div
                 key={step.id}
                 variants={itemVariants}
-                className={`relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 ${
+                className={`relative flex flex-col md:flex-row items-start ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
               >
                 {/* Timeline Node */}
-                <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-10 h-10 rounded-full bg-white dark:bg-gray-800 border-4 border-blue-500 flex items-center justify-center shadow-lg z-10">
-                  <div className={`w-6 h-6 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center`}>
-                    <span className="text-white text-xs font-bold">{index + 1}</span>
+                <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-white dark:bg-gray-800 border-4 border-blue-500 flex items-center justify-center shadow-lg z-10">
+                  <div className={`w-8 h-8 rounded-full bg-gradient-to-r ${step.color} flex items-center justify-center`}>
+                    {step.icon}
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className={`w-full md:w-[calc(50%-2rem)] pl-12 md:pl-0 ${
-                  index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'
+                <div className={`w-full md:w-[calc(50%-2rem)] pl-16 md:pl-0 ${
+                  index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:text-left'
                 }`}>
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className={`inline-flex p-2 rounded-lg bg-gradient-to-r ${step.color} text-white shadow-md`}>
-                        {step.icon}
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                        {step.title}
-                      </h3>
-                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                      {step.title}
+                    </h3>
                     <p className="text-gray-600 dark:text-gray-300 text-sm">
                       {step.description}
                     </p>
