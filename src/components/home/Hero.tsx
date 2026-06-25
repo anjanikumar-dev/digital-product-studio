@@ -1,4 +1,3 @@
-// src/components/home/Hero.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -81,8 +80,8 @@ export default function Hero() {
             </motion.h1>
 
             {/* Description */}
-            <motion.p 
-            variants={itemVariants}
+            <motion.p
+              variants={itemVariants}
               className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-lg leading-relaxed"
             >
               Business Analyst focused on transforming complex business challenges 
@@ -192,7 +191,7 @@ export default function Hero() {
                 {/* Projects Grid */}
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    { name: 'CERT Incident', progress: 78, color: 'blue' },
+                    { name: 'Security Platform', progress: 78, color: 'blue' },
                     { name: 'LMS Platform', progress: 45, color: 'purple' },
                     { name: 'HRMS System', progress: 92, color: 'green' },
                     { name: 'Commerce', progress: 60, color: 'orange' },
