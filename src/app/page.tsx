@@ -1,9 +1,10 @@
-import Container from "@/components/shared/Container";
+import MainLayout from "@/components/layout/MainLayout";
 import Section from "@/components/shared/Section";
+import Container from "@/components/shared/Container";
 
 export default function Home() {
   return (
-    <main>
+    <MainLayout>
       <Section>
         <Container>
           <h1 className="text-5xl font-bold">
@@ -11,6 +12,6 @@ export default function Home() {
           </h1>
         </Container>
       </Section>
-    </main>
+    </MainLayout>
   );
 }
