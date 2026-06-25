@@ -19,79 +19,64 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: 'hrms',
-    title: 'Enterprise HRMS Platform',
-    category: 'Enterprise HR',
-    description: 'A comprehensive HR management system with employee onboarding, attendance tracking, performance management, and advanced analytics dashboard.',
-    image: '/images/hrms-platform.jpg',
-    tags: ['Next.js', 'PostgreSQL', 'Tailwind', 'Prisma', 'GraphQL'],
+    id: 'security-platform',
+    title: 'Enterprise Security Management Platform',
+    category: 'Security',
+    description: 'A comprehensive security management platform for enterprise security teams to monitor, track, and manage security events with real-time collaboration and automated workflows.',
+    image: '/images/security-platform.jpg',
+    tags: ['Next.js', 'Node.js', 'PostgreSQL', 'WebSockets', 'Redis'],
     results: [
-      '60% reduction in HR admin time',
-      '5000+ active employees managed',
-      '45% faster employee onboarding'
+      '70% faster response times',
+      '99.9% system availability',
+      '1000+ concurrent users supported'
     ],
     year: '2024',
-    client: 'Enterprise Organization'
+    client: 'Security Enterprise'
+  },
+  {
+    id: 'hrms',
+    title: 'HRMS Platform',
+    category: 'Enterprise HR',
+    description: 'End-to-end HR management system with employee onboarding, attendance, payroll, and performance tracking.',
+    image: '/images/hrms-platform.jpg',
+    tags: ['Next.js', 'PostgreSQL', 'Tailwind', 'Prisma'],
+    results: [
+      '60% reduction in HR admin time',
+      '1000+ active employees',
+      '40% faster onboarding'
+    ],
+    year: '2024',
+    client: 'TechCorp Inc.'
   },
   {
     id: 'lms',
-    title: 'Enterprise Learning Management System',
+    title: 'Learning Management System',
     category: 'Education Technology',
-    description: 'A scalable learning platform with interactive courses, progress tracking, automated assessments, certification management, and AI-powered recommendations.',
+    description: 'A modern LMS with interactive courses, progress tracking, quizzes, and certification management.',
     image: '/images/lms-platform.jpg',
-    tags: ['React', 'Django', 'PostgreSQL', 'WebRTC', 'Machine Learning'],
+    tags: ['React', 'Django', 'PostgreSQL', 'WebRTC'],
     results: [
       '85% course completion rate',
-      '100,000+ active users',
-      '300+ professional courses'
+      '50,000+ active users',
+      '200+ courses available'
     ],
     year: '2023',
-    client: 'Enterprise Training'
+    client: 'EduTech Global'
   },
   {
     id: 'ecommerce',
-    title: 'Enterprise Commerce Platform',
+    title: 'Commerce Platform',
     category: 'E-Commerce',
-    description: 'A scalable e-commerce solution with advanced product management, multi-vendor support, payment gateway integration, and real-time inventory management.',
+    description: 'A scalable e-commerce solution with advanced product management, payment integration, and analytics dashboard.',
     image: '/images/commerce-platform.jpg',
-    tags: ['Next.js', 'Stripe', 'PostgreSQL', 'Redis', 'AWS'],
+    tags: ['Next.js', 'Stripe', 'PostgreSQL', 'Redis'],
     results: [
-      '150% increase in conversion rate',
-      '$10M+ in processed transactions',
-      '99.99% uptime SLA'
+      '3x increase in conversion rate',
+      '$5M+ total sales processed',
+      '99.9% uptime'
     ],
     year: '2023',
-    client: 'Enterprise Commerce'
-  },
-  {
-    id: 'analytics-platform',
-    title: 'Enterprise Analytics & BI Platform',
-    category: 'Data & Analytics',
-    description: 'A powerful business intelligence platform with real-time data visualization, custom dashboards, and predictive analytics for enterprise decision-making.',
-    image: '/images/analytics-platform.jpg',
-    tags: ['Python', 'React', 'PostgreSQL', 'D3.js', 'Apache Spark'],
-    results: [
-      '40% faster decision-making',
-      '1M+ data points processed daily',
-      '95% data accuracy improvement'
-    ],
-    year: '2024',
-    client: 'Enterprise Analytics'
-  },
-  {
-    id: 'healthcare-platform',
-    title: 'Enterprise Healthcare Management Platform',
-    category: 'Healthcare Technology',
-    description: 'A HIPAA-compliant healthcare platform for patient management, appointment scheduling, telemedicine, and electronic health records (EHR) integration.',
-    image: '/images/healthcare-platform.jpg',
-    tags: ['Next.js', 'PostgreSQL', 'WebRTC', 'Redis', 'FHIR'],
-    results: [
-      '50% reduction in appointment wait times',
-      '25,000+ patients managed',
-      '99.99% compliance rating'
-    ],
-    year: '2024',
-    client: 'Healthcare Enterprise'
+    client: 'Shopify Plus'
   }
 ];
 
@@ -146,7 +131,7 @@ export default function CaseStudies() {
             </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            Enterprise solutions delivered across various industries, showcasing scalability, performance, and innovation.
+            Explore how I've helped transform complex business challenges into successful digital products.
           </p>
         </motion.div>
 
@@ -179,7 +164,7 @@ export default function CaseStudies() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {filteredProjects.map((project) => (
             <motion.div
@@ -190,30 +175,30 @@ export default function CaseStudies() {
               onMouseLeave={() => setActiveProject(null)}
             >
               {/* Image Placeholder */}
-              <div className="relative h-48 bg-gradient-to-br from-blue-500/20 to-purple-500/20 overflow-hidden">
+              <div className="relative h-56 bg-gradient-to-br from-blue-500/20 to-purple-500/20 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 group-hover:opacity-0 transition-opacity duration-500" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                  <div className="w-20 h-20 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                    <span className="text-3xl font-bold text-blue-600 dark:text-blue-400">
                       {project.title.charAt(0)}
                     </span>
                   </div>
                 </div>
                 {/* Category Badge */}
-                <div className="absolute top-3 right-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
+                <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
                   {project.category}
                 </div>
                 {/* Year Badge */}
-                <div className="absolute bottom-3 left-3 bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-medium text-white">
+                <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-white">
                   {project.year}
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-5">
-                <div className="flex items-start justify-between mb-2">
+              <div className="p-6">
+                <div className="flex items-start justify-between mb-3">
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1 leading-tight">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
                       {project.title}
                     </h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -222,40 +207,35 @@ export default function CaseStudies() {
                   </div>
                   <Link
                     href={`/projects/${project.id}`}
-                    className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 dark:text-blue-400 hover:gap-2 transition-all duration-300 flex-shrink-0 ml-2"
+                    className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 dark:text-blue-400 hover:gap-2 transition-all duration-300"
                   >
+                    View Details
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
 
-                <p className="text-sm text-gray-600 dark:text-gray-300 mb-3 line-clamp-2">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
                   {project.description}
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-3">
-                  {project.tags.slice(0, 3).map((tag) => (
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-0.5 bg-gray-100 dark:bg-gray-700/50 rounded-full text-xs font-medium text-gray-600 dark:text-gray-400"
+                      className="px-2.5 py-1 bg-gray-100 dark:bg-gray-700/50 rounded-full text-xs font-medium text-gray-600 dark:text-gray-400"
                     >
                       {tag}
                     </span>
                   ))}
-                  {project.tags.length > 3 && (
-                    <span className="px-2 py-0.5 text-xs font-medium text-gray-400 dark:text-gray-500">
-                      +{project.tags.length - 3}
-                    </span>
-                  )}
                 </div>
 
                 {/* Results */}
-                <div className="pt-3 border-t border-gray-100 dark:border-gray-700">
-                  <div className="grid grid-cols-1 gap-1">
-                    {project.results.slice(0, 2).map((result, index) => (
-                      <div key={index} className="flex items-center gap-1.5">
-                        <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0" />
-                        <p className="text-xs text-gray-600 dark:text-gray-400 truncate">
+                <div className="pt-4 border-t border-gray-100 dark:border-gray-700">
+                  <div className="grid grid-cols-3 gap-2">
+                    {project.results.map((result, index) => (
+                      <div key={index} className="text-center">
+                        <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-1">
                           {result}
                         </p>
                       </div>
