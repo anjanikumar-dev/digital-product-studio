@@ -1,12 +1,14 @@
-import MainLayout from "@/components/layout/MainLayout";
-import Hero from "@/components/home/Hero";
-import Services from "@/components/home/Services";
+import MainLayout from '@/components/layout/MainLayout';
+import Hero from '@/components/home/Hero';
+import Services from '@/components/home/Services';
+import CaseStudies from '@/components/home/CaseStudies';
 
 export default function Home() {
   return (
     <MainLayout>
       <Hero />
       <Services />
+      <CaseStudies />
     </MainLayout>
   );
 }
