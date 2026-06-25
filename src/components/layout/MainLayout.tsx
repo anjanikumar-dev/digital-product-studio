@@ -1,17 +1,16 @@
-import { ReactNode } from "react";
-import Navbar from "./Navbar";
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 interface MainLayoutProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
-export default function MainLayout({
-  children,
-}: MainLayoutProps) {
+export default function MainLayout({ children }: MainLayoutProps) {
   return (
-    <div className="min-h-screen bg-white text-gray-900">
+    <>
       <Navbar />
-      {children}
-    </div>
+      <main>{children}</main>
+      <Footer />
+    </>
   );
 }

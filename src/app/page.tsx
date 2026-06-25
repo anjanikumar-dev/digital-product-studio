@@ -4,6 +4,8 @@ import Services from '@/components/home/Services';
 import CaseStudies from '@/components/home/CaseStudies';
 import Framework from '@/components/home/Framework';
 import Timeline from '@/components/home/Timeline';
+import Testimonials from '@/components/home/Testimonials';
+import CTA from '@/components/home/CTA';
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
       <CaseStudies />
       <Framework />
       <Timeline />
+      <Testimonials />
+      <CTA />
     </MainLayout>
   );
 }
