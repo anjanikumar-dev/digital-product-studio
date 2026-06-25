@@ -3,6 +3,7 @@ import Hero from '@/components/home/Hero';
 import Services from '@/components/home/Services';
 import CaseStudies from '@/components/home/CaseStudies';
 import Framework from '@/components/home/Framework';
+import Timeline from '@/components/home/Timeline';
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Services />
       <CaseStudies />
       <Framework />
+      <Timeline />
     </MainLayout>
   );
 }
