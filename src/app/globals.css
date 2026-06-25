@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Gradient Animation */
 @keyframes gradient {
   0% {
@@ -42,6 +46,12 @@
 
 /* Selection color */
 ::selection {
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* Dark mode selection color */
+.dark ::selection {
   background-color: #3b82f6;
   color: white;
 }
