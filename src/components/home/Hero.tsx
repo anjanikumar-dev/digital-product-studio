@@ -81,8 +81,8 @@ export default function Hero() {
             </motion.h1>
 
             {/* Description */}
-            <motion.p
-              variants={itemVariants}
+            <motion.p 
+            variants={itemVariants}
               className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-lg leading-relaxed"
             >
               Business Analyst focused on transforming complex business challenges 
