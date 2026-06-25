@@ -8,7 +8,7 @@ import {
   Code, 
   Rocket, 
   TrendingUp,
-  ArrowRight 
+  ArrowRight
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -103,6 +103,7 @@ const steps: FrameworkStep[] = [
 ];
 
 export default function Framework() {
+  // FIXED: No transition property
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -114,12 +115,12 @@ export default function Framework() {
     },
   };
 
+  // FIXED: No transition property
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
     },
   };
 
