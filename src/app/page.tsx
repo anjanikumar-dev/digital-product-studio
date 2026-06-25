@@ -1,17 +1,12 @@
 import MainLayout from "@/components/layout/MainLayout";
-import Section from "@/components/shared/Section";
-import Container from "@/components/shared/Container";
+import Hero from "@/components/home/Hero";
+import Services from "@/components/home/Services";
 
 export default function Home() {
   return (
     <MainLayout>
-      <Section>
-        <Container>
-          <h1 className="text-5xl font-bold">
-            Digital Product Studio
-          </h1>
-        </Container>
-      </Section>
+      <Hero />
+      <Services />
     </MainLayout>
   );
 }
