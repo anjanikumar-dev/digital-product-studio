@@ -10,7 +10,10 @@ import {
   Tag,
   ArrowRight,
   Heart,
-  MessageCircle
+  MessageCircle,
+  Briefcase,
+  Target,
+  Lightbulb
 } from 'lucide-react';
 import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
@@ -34,97 +37,97 @@ interface JournalPost {
 const journalPosts: JournalPost[] = [
   {
     id: '1',
-    title: 'The Future of Digital Product Development',
-    excerpt: 'Exploring emerging trends and technologies that will shape the future of digital products.',
+    title: 'Business Analysis in Government Digital Transformation',
+    excerpt: 'Key lessons from leading business analysis on large-scale government digital transformation projects.',
     content: 'Full content here...',
-    author: 'John Doe',
+    author: 'Anjani Kumar',
     date: 'December 20, 2024',
     readTime: '12 min read',
-    category: 'Trends',
-    tags: ['Future Tech', 'Innovation', 'AI', 'Digital Transformation'],
+    category: 'Business Analysis',
+    tags: ['Government', 'Digital Transformation', 'Business Analysis'],
     image: '/images/journal1.jpg',
-    likes: 456,
-    comments: 78,
+    likes: 56,
+    comments: 12,
     featured: true
   },
   {
     id: '2',
-    title: 'Why User Experience Matters More Than Ever',
-    excerpt: 'In today\'s competitive landscape, exceptional user experience is the key differentiator.',
+    title: 'Product Strategy for Enterprise AI Products',
+    excerpt: 'How to define product strategy for AI-powered products in enterprise environments.',
     content: 'Full content here...',
-    author: 'John Doe',
+    author: 'Anjani Kumar',
     date: 'December 18, 2024',
-    readTime: '5 min read',
-    category: 'UX Design',
-    tags: ['UX Design', 'User Research', 'Customer Experience'],
+    readTime: '8 min read',
+    category: 'Product Strategy',
+    tags: ['AI', 'Product Strategy', 'Enterprise'],
     image: '/images/journal2.jpg',
-    likes: 234,
-    comments: 34,
+    likes: 34,
+    comments: 8,
     featured: false
   },
   {
     id: '3',
-    title: 'Agile Development: Beyond the Basics',
-    excerpt: 'Advanced agile practices that can transform your development team\'s productivity.',
+    title: 'Writing Effective User Stories for Complex Systems',
+    excerpt: 'Best practices for writing user stories that drive development and deliver business value.',
     content: 'Full content here...',
-    author: 'John Doe',
+    author: 'Anjani Kumar',
     date: 'December 15, 2024',
-    readTime: '8 min read',
-    category: 'Development',
-    tags: ['Agile', 'Scrum', 'Team Management', 'Productivity'],
+    readTime: '6 min read',
+    category: 'Business Analysis',
+    tags: ['User Stories', 'Agile', 'Requirements'],
     image: '/images/journal3.jpg',
-    likes: 189,
-    comments: 23,
+    likes: 45,
+    comments: 6,
     featured: false
   },
   {
     id: '4',
-    title: 'Building a Design System That Scales',
-    excerpt: 'How to create and maintain a design system that grows with your product.',
+    title: 'Stakeholder Management in Enterprise Projects',
+    excerpt: 'Effective strategies for managing stakeholders across large-scale enterprise initiatives.',
     content: 'Full content here...',
-    author: 'John Doe',
+    author: 'Anjani Kumar',
     date: 'December 12, 2024',
-    readTime: '6 min read',
-    category: 'Design',
-    tags: ['Design System', 'UI Design', 'Scalability'],
+    readTime: '7 min read',
+    category: 'Product Management',
+    tags: ['Stakeholders', 'Communication', 'Enterprise'],
     image: '/images/journal4.jpg',
-    likes: 312,
-    comments: 45,
+    likes: 28,
+    comments: 5,
     featured: false
   },
   {
     id: '5',
-    title: 'The Role of AI in Modern Product Strategy',
-    excerpt: 'Integrating AI capabilities to create smarter, more personalized products.',
+    title: 'From Requirements to Product: A BA\'s Journey',
+    excerpt: 'How business analysts bridge the gap between business needs and product delivery.',
     content: 'Full content here...',
-    author: 'John Doe',
+    author: 'Anjani Kumar',
     date: 'December 8, 2024',
-    readTime: '7 min read',
-    category: 'Technology',
-    tags: ['AI', 'Product Strategy', 'Innovation'],
+    readTime: '10 min read',
+    category: 'Business Analysis',
+    tags: ['Requirements', 'Product Delivery', 'BA'],
     image: '/images/journal5.jpg',
-    likes: 267,
-    comments: 31,
+    likes: 52,
+    comments: 9,
     featured: false
   },
   {
     id: '6',
-    title: 'From MVP to Scale: A Product Journey',
-    excerpt: 'Lessons learned from taking a product from minimum viable product to market leader.',
+    title: 'Agile at Scale: Lessons from Enterprise Implementation',
+    excerpt: 'Key learnings from implementing agile practices across large enterprise organizations.',
     content: 'Full content here...',
-    author: 'John Doe',
+    author: 'Anjani Kumar',
     date: 'December 5, 2024',
     readTime: '9 min read',
-    category: 'Strategy',
-    tags: ['MVP', 'Product Development', 'Scaling'],
+    category: 'Agile',
+    tags: ['Agile', 'Scaling', 'Enterprise'],
     image: '/images/journal6.jpg',
-    likes: 345,
-    comments: 52,
+    likes: 38,
+    comments: 7,
     featured: false
   }
 ];
 
-const categories = ['All', 'Trends', 'UX Design', 'Development', 'Design', 'Technology', 'Strategy'];
+const categories = ['All', 'Business Analysis', 'Product Strategy', 'Product Management', 'Agile'];
 
 export default function JournalPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -174,13 +177,13 @@ export default function JournalPage() {
               Journal
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              Thoughts &{' '}
+              Thoughts &amp; Insights from{' '}
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Insights
+                Anjani Kumar
               </span>
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Exploring ideas, sharing learnings, and discussing the future of digital products.
+              Exploring product strategy, business analysis, AI, and digital transformation.
             </p>
           </motion.div>
 
@@ -276,7 +279,7 @@ export default function JournalPage() {
               <motion.article
                 key={post.id}
                 variants={itemVariants}
-                className="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                className="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-gray-700"
               >
                 <div className="p-6">
                   <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-3">
@@ -317,7 +320,7 @@ export default function JournalPage() {
                   <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-gray-700">
                     <div className="flex items-center gap-2">
                       <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white text-xs font-bold">
-                        {post.author.charAt(0)}
+                        AK
                       </div>
                       <span className="text-xs text-gray-600 dark:text-gray-300">
                         {post.author}
