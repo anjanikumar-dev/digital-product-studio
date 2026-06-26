@@ -16,7 +16,6 @@ export default function CTA() {
 
   return (
     <section className="py-20 md:py-28 relative overflow-hidden">
-      {/* Background Decorations */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 opacity-5" />
       <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl" />
       <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-400/20 rounded-full blur-3xl" />
@@ -30,7 +29,6 @@ export default function CTA() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -39,10 +37,9 @@ export default function CTA() {
             className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-6"
           >
             <Sparkles className="w-4 h-4" />
-            Let's Build Something Amazing
+            Work with Anjani Kumar
           </motion.div>
 
-          {/* Heading */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +55,6 @@ export default function CTA() {
             <span className="text-gray-800 dark:text-white">Into Digital Products?</span>
           </motion.h2>
 
-          {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -67,10 +63,9 @@ export default function CTA() {
             className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10"
           >
             Let's collaborate and build something that your users will love. 
-            Whether you need a full product or just some guidance, I'm here to help.
+            Whether you need a full product or just strategic guidance, I'm here to help.
           </motion.p>
 
-          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +78,7 @@ export default function CTA() {
               className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/35 hover:-translate-y-0.5"
             >
               <Mail className="w-5 h-5" />
-              Start a Project
+              Start a Project with Anjani
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
@@ -91,11 +86,10 @@ export default function CTA() {
               className="inline-flex items-center gap-2 px-8 py-4 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium rounded-lg border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
             >
               <Calendar className="w-5 h-5" />
-              Schedule a Call
+              Schedule a Consultation
             </Link>
           </motion.div>
 
-          {/* Trust Indicators */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

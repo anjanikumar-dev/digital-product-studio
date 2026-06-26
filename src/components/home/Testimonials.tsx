@@ -64,7 +64,7 @@ const testimonials: Testimonial[] = [
     role: 'Head of Product',
     company: 'HealthTech Solutions',
     avatar: 'DK',
-    content: 'The team\'s ability to understand our complex healthcare requirements and translate them into a seamless user experience was impressive. Anjani truly cares about building products that make a difference.',
+    content: 'Anjani\'s ability to understand our complex healthcare requirements and translate them into a seamless user experience was impressive. He truly cares about building products that make a difference.',
     rating: 5,
     date: 'September 2024',
     project: 'Healthcare Management Platform'
@@ -114,7 +114,6 @@ export default function Testimonials() {
   return (
     <section className="py-20 md:py-28 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -126,9 +125,9 @@ export default function Testimonials() {
             Testimonials
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            What{' '}
+            What Clients Say About{' '}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Clients Say
+              Anjani Kumar
             </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
@@ -136,9 +135,7 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
-        {/* Testimonials Slider */}
         <div className="relative max-w-4xl mx-auto">
-          {/* Navigation Buttons */}
           <button
             onClick={prevTestimonial}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-10 p-2 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700"
@@ -155,7 +152,6 @@ export default function Testimonials() {
             <ChevronRight className="w-5 h-5 text-gray-600 dark:text-gray-300" />
           </button>
 
-          {/* Testimonial Cards */}
           <div className="relative h-[400px] md:h-[350px] overflow-hidden">
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
@@ -177,12 +173,10 @@ export default function Testimonials() {
                   animate="visible"
                   className="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-10 shadow-xl h-full"
                 >
-                  {/* Quote Icon */}
                   <div className="absolute top-6 right-8 opacity-10">
                     <Quote className="w-16 h-16 text-blue-600 dark:text-blue-400" />
                   </div>
 
-                  {/* Rating */}
                   <div className="flex items-center gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
                       <Star
@@ -196,12 +190,10 @@ export default function Testimonials() {
                     ))}
                   </div>
 
-                  {/* Content */}
                   <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6 line-clamp-4">
                     "{testimonials[currentIndex].content}"
                   </p>
 
-                  {/* Author */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
                       <div className="w-14 h-14 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-blue-500/25">
@@ -232,7 +224,6 @@ export default function Testimonials() {
             </AnimatePresence>
           </div>
 
-          {/* Dots Indicator */}
           <div className="flex justify-center gap-2 mt-8">
             {testimonials.map((_, index) => (
               <button

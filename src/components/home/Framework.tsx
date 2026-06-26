@@ -125,7 +125,6 @@ export default function Framework() {
   return (
     <section className="py-20 md:py-28 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -134,10 +133,10 @@ export default function Framework() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="inline-block text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
-            Methodology
+            Methodology by Anjani Kumar
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            My{' '}
+            The{' '}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               6D Framework
             </span>
@@ -147,7 +146,6 @@ export default function Framework() {
           </p>
         </motion.div>
 
-        {/* Steps Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -161,25 +159,18 @@ export default function Framework() {
               variants={itemVariants}
               className="group relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
             >
-              {/* Step Number */}
               <div className="absolute top-4 right-4 text-4xl font-bold text-gray-100 dark:text-gray-700 group-hover:text-gray-200 dark:group-hover:text-gray-600 transition-colors duration-300">
                 {String(index + 1).padStart(2, '0')}
               </div>
-
-              {/* Icon */}
               <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${step.color} text-white mb-4 shadow-lg`}>
                 {step.icon}
               </div>
-
-              {/* Content */}
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                 {step.title}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
                 {step.description}
               </p>
-
-              {/* Details */}
               <ul className="space-y-2">
                 {step.details.map((detail, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
@@ -188,14 +179,11 @@ export default function Framework() {
                   </li>
                 ))}
               </ul>
-
-              {/* Hover Line */}
               <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${step.color} rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
             </motion.div>
           ))}
         </motion.div>
 
-        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

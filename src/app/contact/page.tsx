@@ -105,17 +105,17 @@ export default function ContactPage() {
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <span className="inline-block text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
-              Get in Touch
-            </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              Let's{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Work Together
-              </span>
-            </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
-              Have a project in mind? Let's discuss how I can help bring your vision to life.
-            </p>
+  Get in Touch
+</span>
+<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+  Work with{' '}
+  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+    Anjani Kumar
+  </span>
+</h1>
+<p className="text-lg text-gray-600 dark:text-gray-300">
+  Have a project in mind? Let's discuss how I can help bring your vision to life.
+</p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">

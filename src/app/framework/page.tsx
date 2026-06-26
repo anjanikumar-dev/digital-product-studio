@@ -149,14 +149,18 @@ export default function FrameworkPage() {
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <span className="inline-block text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
-              Methodology
-            </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              The{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                6D Framework
-              </span>
-            </h1>
+  Methodology
+</span>
+<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+  The{' '}
+  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+    6D Framework
+  </span>
+  <br />
+  <span className="text-lg text-gray-600 dark:text-gray-300 font-normal">
+    by Anjani Kumar
+  </span>
+</h1>
             <p className="text-lg text-gray-600 dark:text-gray-300">
               A comprehensive approach to building digital products that deliver real business value.
             </p>

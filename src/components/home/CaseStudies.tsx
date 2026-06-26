@@ -21,7 +21,7 @@ const projects: Project[] = [
   {
     id: 'security-platform',
     title: 'Enterprise Security Management Platform',
-    category: 'Security',
+    category: 'Cyber Security',
     description: 'A comprehensive security management platform for enterprise security teams to monitor, track, and manage security events with real-time collaboration and automated workflows.',
     image: '/images/security-platform.jpg',
     tags: ['Next.js', 'Node.js', 'PostgreSQL', 'WebSockets', 'Redis'],
@@ -80,7 +80,7 @@ const projects: Project[] = [
   }
 ];
 
-const categories = ['All', 'Security', 'Enterprise HR', 'Education Technology', 'E-Commerce'];
+const categories = ['All', 'Cyber Security', 'Enterprise HR', 'Education Technology', 'E-Commerce'];
 
 export default function CaseStudies() {
   const [activeProject, setActiveProject] = useState<string | null>(null);
@@ -114,7 +114,6 @@ export default function CaseStudies() {
   return (
     <section className="py-20 md:py-28 bg-gray-50 dark:bg-gray-800/50 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -126,17 +125,17 @@ export default function CaseStudies() {
             Portfolio
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Featured{' '}
+            Real Projects Delivered by{' '}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Case Studies
+              Anjani Kumar
             </span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            Explore how I've helped transform complex business challenges into successful digital products.
+            Explore how I've helped enterprises and government organizations solve complex 
+            challenges and achieve measurable outcomes.
           </p>
         </motion.div>
 
-        {/* Filter Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -159,7 +158,6 @@ export default function CaseStudies() {
           ))}
         </motion.div>
 
-        {/* Projects Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -175,7 +173,6 @@ export default function CaseStudies() {
               onMouseEnter={() => setActiveProject(project.id)}
               onMouseLeave={() => setActiveProject(null)}
             >
-              {/* Image Placeholder */}
               <div className="relative h-56 bg-gradient-to-br from-blue-500/20 to-purple-500/20 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 group-hover:opacity-0 transition-opacity duration-500" />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -185,17 +182,14 @@ export default function CaseStudies() {
                     </span>
                   </div>
                 </div>
-                {/* Category Badge */}
                 <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
                   {project.category}
                 </div>
-                {/* Year Badge */}
                 <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-white">
                   {project.year}
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-6">
                 <div className="flex items-start justify-between mb-3">
                   <div>
@@ -219,7 +213,6 @@ export default function CaseStudies() {
                   {project.description}
                 </p>
 
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span
@@ -231,7 +224,6 @@ export default function CaseStudies() {
                   ))}
                 </div>
 
-                {/* Results */}
                 <div className="pt-4 border-t border-gray-100 dark:border-gray-700">
                   <div className="grid grid-cols-3 gap-2">
                     {project.results.map((result, index) => (
@@ -245,7 +237,6 @@ export default function CaseStudies() {
                 </div>
               </div>
 
-              {/* Hover Overlay */}
               <motion.div
                 className="absolute inset-0 pointer-events-none bg-gradient-to-t from-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 initial={false}
@@ -255,7 +246,6 @@ export default function CaseStudies() {
           ))}
         </motion.div>
 
-        {/* View All Projects CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

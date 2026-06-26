@@ -85,7 +85,7 @@ export default function Footer() {
       links: [
         { label: 'Product Strategy', href: '/services/product-strategy' },
         { label: 'Business Analysis', href: '/services/business-analysis' },
-        { label: 'UX Design', href: '/services/ux-design' },
+        { label: 'Enterprise UX Design', href: '/services/ux-design' },
         { label: 'System Design', href: '/services/system-design' },
         { label: 'Agile Delivery', href: '/services/agile-delivery' },
         { label: 'AI & Automation', href: '/services/ai-automation' },
@@ -105,7 +105,6 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 dark:bg-black text-gray-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -113,7 +112,6 @@ export default function Footer() {
           viewport={{ once: true }}
           className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12"
         >
-          {/* Brand Section */}
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
               <h3 className="text-2xl font-bold text-white">
@@ -124,11 +122,11 @@ export default function Footer() {
               </h3>
             </Link>
             <p className="text-gray-400 text-sm max-w-md mb-6 leading-relaxed">
-              Transforming complex business challenges into scalable digital products 
-              through strategy, UX thinking, and modern technology.
+              Enterprise digital products designed and delivered by{' '}
+              <span className="text-white font-medium">Anjani Kumar</span>. 
+              Senior Business Analyst &amp; Product Strategist with 12+ years of experience.
             </p>
             
-            {/* Contact Info */}
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2 text-gray-400">
                 <Mail className="w-4 h-4 text-blue-400" />
@@ -142,7 +140,6 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Social Links */}
             <div className="flex gap-3 mt-6">
               {socialLinks.map((social) => (
                 <a
@@ -159,7 +156,6 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* Footer Sections */}
           {sections.map((section) => (
             <motion.div key={section.title} variants={itemVariants}>
               <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">
@@ -181,7 +177,6 @@ export default function Footer() {
           ))}
         </motion.div>
 
-        {/* Bottom Bar */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -189,15 +184,15 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="border-t border-gray-800 py-6 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
-          {/* Copyright */}
-          <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Digital Product Studio — Built by Anjani Kumar.
+          <p className="text-sm text-gray-500 text-center sm:text-left">
+            © {new Date().getFullYear()} Digital Product Studio — Built by{' '}
+            <span className="text-white font-medium">Anjani Kumar</span>.
+            <br className="sm:hidden" />
             Made with <Heart className="w-3.5 h-3.5 inline text-red-500 animate-pulse" /> 
             and <Sparkles className="w-3.5 h-3.5 inline text-blue-400" /> 
             for great digital experiences.
           </p>
 
-          {/* Scroll to Top */}
           <button
             onClick={scrollToTop}
             className="flex items-center gap-2 px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white rounded-lg transition-all duration-300 hover:-translate-y-1 text-sm"

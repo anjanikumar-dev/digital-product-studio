@@ -87,7 +87,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-4 py-2 rounded-full text-sm font-medium border border-blue-100 dark:border-blue-800"
             >
               <Sparkles className="w-4 h-4" />
-              Available for Freelance & Full-Time
+              Enterprise Digital Products — Designed by Anjani Kumar
             </motion.div>
 
             {/* Main Headline */}
@@ -109,8 +109,8 @@ export default function Hero() {
               variants={itemVariants}
               className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-lg leading-relaxed"
             >
-              Business Analyst &amp; Product Strategist specializing in enterprise solutions, 
-              AI products, and digital transformation across government, fintech, and enterprise sectors.
+              Senior Business Analyst &amp; Product Strategist specializing in enterprise 
+              solutions, government platforms, and AI-powered digital products.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -122,7 +122,7 @@ export default function Hero() {
                 href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 shadow-lg shadow-blue-600/25 hover:shadow-xl hover:shadow-blue-600/35 hover:-translate-y-0.5"
               >
-                Let's Talk
+                Work with Anjani
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
@@ -133,7 +133,7 @@ export default function Hero() {
               </Link>
             </motion.div>
 
-            {/* Specialties Grid - IMMEDIATE VISIBILITY */}
+            {/* Specialties Grid */}
             <motion.div
               variants={itemVariants}
               className="pt-2"
@@ -179,7 +179,6 @@ export default function Hero() {
             className="relative"
           >
             <div className="relative rounded-2xl bg-white dark:bg-gray-800 shadow-2xl shadow-blue-500/10 overflow-hidden border border-gray-200 dark:border-gray-700">
-              {/* Dashboard Header */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/50">
                 <div className="flex items-center gap-3">
                   <div className="flex gap-1.5">
@@ -188,7 +187,7 @@ export default function Hero() {
                     <div className="w-3 h-3 rounded-full bg-green-500" />
                   </div>
                   <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                    Digital Product Studio
+                    Digital Product Studio — by Anjani Kumar
                   </span>
                 </div>
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-green-500/10 text-green-600 dark:text-green-400 rounded-full text-xs font-medium">
@@ -196,10 +195,7 @@ export default function Hero() {
                   Live
                 </span>
               </div>
-
-              {/* Dashboard Content */}
               <div className="p-6 space-y-6">
-                {/* Progress Section */}
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -218,8 +214,6 @@ export default function Hero() {
                     />
                   </div>
                 </div>
-
-                {/* Projects Grid */}
                 <div className="grid grid-cols-2 gap-3">
                   {[
                     { name: 'Security Platform', progress: 78, color: 'blue' },
@@ -248,8 +242,6 @@ export default function Hero() {
                     </div>
                   ))}
                 </div>
-
-                {/* Bottom Stats */}
                 <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-gray-700">
                   <div className="flex items-center gap-4">
                     <div>
@@ -276,8 +268,6 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-
-            {/* Floating Element */}
             <motion.div
               className="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700"
               initial={{ opacity: 0, y: 20 }}
@@ -297,7 +287,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
           initial={{ opacity: 0, y: -10 }}

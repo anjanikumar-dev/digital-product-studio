@@ -65,19 +65,19 @@ export default function CaseStudiesPage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
-            <span className="inline-block text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
-              Case Studies
-            </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              Real{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Projects
-              </span>
-              {' '}Delivered
-            </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-300">
-              Explore how I've helped enterprises solve complex challenges and achieve measurable outcomes.
-            </p>
+            // Find the header section and update the subheading
+<span className="inline-block text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
+  Case Studies
+</span>
+<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+  Real Projects Delivered by{' '}
+  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+    Anjani Kumar
+  </span>
+</h1>
+<p className="text-lg text-gray-600 dark:text-gray-300">
+  Explore how I've helped enterprises solve complex challenges and achieve measurable outcomes.
+</p>
           </motion.div>
 
           {/* Search and Filter */}

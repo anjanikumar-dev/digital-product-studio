@@ -193,14 +193,14 @@ export default function ResourcesPage() {
             className="text-center max-w-3xl mx-auto mb-12"
           >
             <span className="inline-block text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
-              Resources
-            </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              Free{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Resources
-              </span>
-            </h1>
+  Resources
+</span>
+<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+  Templates &amp; Toolkits Created by{' '}
+  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+    Anjani Kumar
+  </span>
+</h1>
             <p className="text-lg text-gray-600 dark:text-gray-300">
               Templates, guides, and tools to help you build better digital products.
             </p>
