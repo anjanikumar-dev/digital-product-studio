@@ -73,7 +73,7 @@ export default function Footer() {
       links: [
         { label: 'Home', href: '/' },
         { label: 'Projects', href: '/projects' },
-        { label: 'Stories', href: '/stories' },
+        { label: 'Case Studies', href: '/stories' },
         { label: '6D Framework', href: '/framework' },
         { label: 'Journal', href: '/journal' },
         { label: 'Resources', href: '/resources' },

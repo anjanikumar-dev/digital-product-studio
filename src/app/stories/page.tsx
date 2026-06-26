@@ -11,12 +11,17 @@ import {
   Search,
   Heart,
   MessageCircle,
-  Share2
+  Briefcase,
+  Target,
+  Lightbulb,
+  Rocket,
+  TrendingUp,
+  BookOpen
 } from 'lucide-react';
 import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
 
-interface Story {
+interface CaseStudy {
   id: string;
   title: string;
   excerpt: string;
@@ -29,110 +34,177 @@ interface Story {
   image: string;
   likes: number;
   comments: number;
+  // New fields for case studies
+  businessProblem: string;
+  discoveryProcess: string;
+  requirements: string[];
+  solution: string;
+  challenges: string[];
+  rolePlayed: string;
+  businessOutcome: string[];
+  lessonsLearned: string[];
+  industry: string;
+  duration: string;
+  technologies: string[];
 }
 
-const stories: Story[] = [
+const caseStudies: CaseStudy[] = [
   {
-    id: '1',
-    title: 'Building Scalable Microservices with Next.js and Node.js',
-    excerpt: 'Learn how we built a highly scalable microservices architecture that handles millions of requests per day.',
+    id: 'hrms-platform',
+    title: 'Enterprise HRMS Platform',
+    excerpt: 'Complete HR transformation for a 5000+ employee organization, reducing admin time by 60%.',
     content: 'Full content here...',
-    author: 'John Doe',
-    date: 'December 15, 2024',
+    author: 'Anjani Kumar',
+    date: 'December 2024',
     readTime: '8 min read',
-    category: 'Technical',
-    tags: ['Microservices', 'Next.js', 'Node.js', 'AWS'],
-    image: '/images/story1.jpg',
-    likes: 245,
-    comments: 42
+    category: 'Enterprise HR',
+    tags: ['HRMS', 'Digital Transformation', 'Enterprise'],
+    image: '/images/hrms-case.jpg',
+    likes: 89,
+    comments: 12,
+    businessProblem: 'TechCorp Inc. was struggling with a fragmented HR system that required manual data entry across multiple platforms. HR teams spent 60% of their time on administrative tasks, employee onboarding took 2-3 weeks, and payroll processing was error-prone.',
+    discoveryProcess: 'Conducted 25+ stakeholder interviews across HR, IT, and leadership teams. Analyzed existing workflows, pain points, and user journeys. Mapped out the end-to-end employee lifecycle from onboarding to offboarding.',
+    requirements: [
+      'Self-service portal for employees',
+      'Automated onboarding workflows',
+      'Real-time attendance tracking',
+      'Integrated payroll system',
+      'Performance management module',
+      'Advanced reporting dashboard'
+    ],
+    solution: 'Built a comprehensive HRMS platform with a modern, intuitive interface. Implemented automated workflows for onboarding, attendance, and payroll. Created a self-service portal where employees can access payslips, apply for leave, and update personal information.',
+    challenges: [
+      'Integrating with 5 legacy systems',
+      'Data migration with zero downtime',
+      'User adoption across 5000+ employees',
+      'Compliance with local labor laws'
+    ],
+    rolePlayed: 'Lead Business Analyst & Product Strategist. I led the discovery phase, defined requirements, designed the product roadmap, and collaborated with developers to ensure technical feasibility.',
+    businessOutcome: [
+      '60% reduction in HR admin time',
+      '3x faster employee onboarding (from 2 weeks to 3 days)',
+      '95% user adoption within 3 months',
+      '$500K annual cost savings'
+    ],
+    lessonsLearned: [
+      'User training and change management is as important as the technology',
+      'Early stakeholder buy-in is critical for success',
+      'Data migration needs meticulous planning',
+      'Iterative feedback loops improve user adoption'
+    ],
+    industry: 'Enterprise Technology',
+    duration: '6 months',
+    technologies: ['Next.js', 'PostgreSQL', 'Prisma', 'Tailwind CSS', 'GraphQL']
   },
   {
-    id: '2',
-    title: 'The Art of UX Design: Creating Products Users Love',
-    excerpt: 'A deep dive into user-centered design principles and how they transform digital products.',
+    id: 'lms-platform',
+    title: 'Learning Management System',
+    excerpt: 'Scalable LMS platform serving 100,000+ users with 85% course completion rate.',
     content: 'Full content here...',
-    author: 'John Doe',
-    date: 'December 10, 2024',
-    readTime: '6 min read',
-    category: 'Design',
-    tags: ['UX Design', 'UI Design', 'User Research'],
-    image: '/images/story2.jpg',
-    likes: 189,
-    comments: 28
-  },
-  {
-    id: '3',
-    title: 'From Idea to Launch: A Complete Product Development Journey',
-    excerpt: 'Follow the journey of a digital product from initial concept to successful launch.',
-    content: 'Full content here...',
-    author: 'John Doe',
-    date: 'December 5, 2024',
+    author: 'Anjani Kumar',
+    date: 'November 2024',
     readTime: '10 min read',
-    category: 'Process',
-    tags: ['Product Development', 'Agile', 'Project Management'],
-    image: '/images/story3.jpg',
-    likes: 312,
-    comments: 56
+    category: 'EdTech',
+    tags: ['LMS', 'EdTech', 'Scalability'],
+    image: '/images/lms-case.jpg',
+    likes: 67,
+    comments: 8,
+    businessProblem: 'EduTech Global needed a modern LMS to replace their outdated system. The existing platform had poor user engagement, limited functionality, and couldn\'t scale to meet growing demand.',
+    discoveryProcess: 'Conducted user research with 100+ students and instructors. Analyzed competitor platforms and identified key differentiators. Defined user personas and learning journeys.',
+    requirements: [
+      'Interactive course player',
+      'Real-time progress tracking',
+      'Automated assessments and quizzes',
+      'Certification engine',
+      'Live video integration',
+      'Mobile-responsive design'
+    ],
+    solution: 'Built a modern LMS with interactive course player, progress tracking, and automated assessments. Implemented WebRTC for live video sessions and created a certification engine for course completion.',
+    challenges: [
+      'Handling 10,000+ concurrent users during peak times',
+      'Video streaming optimization',
+      'Real-time progress tracking across devices',
+      'Accessibility compliance'
+    ],
+    rolePlayed: 'Business Analyst & Product Strategist. I led the product discovery, defined the technical requirements, and worked with the engineering team on scalability challenges.',
+    businessOutcome: [
+      '85% course completion rate (industry average is 30%)',
+      '100,000+ active users',
+      '300+ professional courses available',
+      '4.5/5 average user rating'
+    ],
+    lessonsLearned: [
+      'Simple, intuitive UX drives user engagement',
+      'Scalability should be considered from day one',
+      'Gamification significantly improves completion rates',
+      'Mobile-first design is essential for accessibility'
+    ],
+    industry: 'Education Technology',
+    duration: '8 months',
+    technologies: ['React', 'Django', 'PostgreSQL', 'WebRTC', 'Redis']
   },
   {
-    id: '4',
-    title: 'Implementing AI and Automation in Modern Products',
-    excerpt: 'How AI and automation are revolutionizing digital products and improving user experiences.',
+    id: 'commerce-platform',
+    title: 'Enterprise Commerce Platform',
+    excerpt: 'High-performance e-commerce platform with $10M+ in processed transactions.',
     content: 'Full content here...',
-    author: 'John Doe',
-    date: 'November 28, 2024',
-    readTime: '7 min read',
-    category: 'Technology',
-    tags: ['AI', 'Automation', 'Machine Learning'],
-    image: '/images/story4.jpg',
-    likes: 167,
-    comments: 23
-  },
-  {
-    id: '5',
-    title: 'Designing for Accessibility: A Comprehensive Guide',
-    excerpt: 'Everything you need to know about creating accessible digital products for all users.',
-    content: 'Full content here...',
-    author: 'John Doe',
-    date: 'November 20, 2024',
+    author: 'Anjani Kumar',
+    date: 'October 2024',
     readTime: '9 min read',
-    category: 'Design',
-    tags: ['Accessibility', 'Inclusive Design', 'WCAG'],
-    image: '/images/story5.jpg',
-    likes: 234,
-    comments: 38
-  },
-  {
-    id: '6',
-    title: 'Optimizing Performance for Next.js Applications',
-    excerpt: 'Advanced techniques to optimize Next.js applications for maximum performance and speed.',
-    content: 'Full content here...',
-    author: 'John Doe',
-    date: 'November 15, 2024',
-    readTime: '11 min read',
-    category: 'Technical',
-    tags: ['Next.js', 'Performance', 'Optimization'],
-    image: '/images/story6.jpg',
-    likes: 278,
-    comments: 45
+    category: 'E-Commerce',
+    tags: ['E-Commerce', 'Performance', 'Scalability'],
+    image: '/images/commerce-case.jpg',
+    likes: 93,
+    comments: 15,
+    businessProblem: 'Shopify Plus needed to handle 10x traffic spikes during sales events. Their existing platform had frequent downtime, slow load times, and poor conversion rates.',
+    discoveryProcess: 'Analyzed traffic patterns, user behavior, and conversion funnels. Reviewed infrastructure limitations and identified bottlenecks.',
+    requirements: [
+      'High-availability architecture',
+      'Real-time inventory management',
+      'Advanced product search',
+      'Personalized recommendations',
+      'One-click checkout'
+    ],
+    solution: 'Built a headless e-commerce platform with real-time inventory management, advanced search, and personalized recommendations. Implemented edge caching and CDN for global performance.',
+    challenges: [
+      'Handling 10x traffic spikes during sales events',
+      'Real-time inventory sync across multiple warehouses',
+      'Payment processing reliability',
+      'Security and PCI compliance'
+    ],
+    rolePlayed: 'Product Strategist & Business Analyst. I led the product strategy, defined the technical architecture, and managed cross-functional team coordination.',
+    businessOutcome: [
+      '3x increase in conversion rate',
+      '$10M+ total sales processed',
+      '99.99% uptime during peak events',
+      '150% increase in average order value'
+    ],
+    lessonsLearned: [
+      'Performance optimization directly impacts revenue',
+      'Real-time inventory visibility builds customer trust',
+      'Headless architecture enables rapid innovation',
+      'Personalization drives customer loyalty'
+    ],
+    industry: 'E-Commerce',
+    duration: '9 months',
+    technologies: ['Next.js', 'Stripe', 'PostgreSQL', 'Redis', 'AWS']
   }
 ];
 
-const categories = ['All', 'Technical', 'Design', 'Process', 'Technology'];
+const categories = ['All', 'Enterprise HR', 'EdTech', 'E-Commerce'];
 
-export default function StoriesPage() {
+export default function CaseStudiesPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredStories = stories.filter(story => {
-    const matchesCategory = selectedCategory === 'All' || story.category === selectedCategory;
-    const matchesSearch = story.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          story.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          story.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+  const filteredStories = caseStudies.filter(study => {
+    const matchesCategory = selectedCategory === 'All' || study.category === selectedCategory;
+    const matchesSearch = study.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          study.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          study.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
 
-  // FIXED: No transition property
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -144,7 +216,6 @@ export default function StoriesPage() {
     },
   };
 
-  // FIXED: No transition property
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -165,16 +236,17 @@ export default function StoriesPage() {
             className="text-center max-w-3xl mx-auto mb-12"
           >
             <span className="inline-block text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
-              Stories
+              Case Studies
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              Insights &{' '}
+              Real{' '}
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Stories
+                Projects
               </span>
+              {' '}Delivered
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              Learnings, experiences, and insights from real-world product development journeys.
+              Explore how I've helped enterprises solve complex challenges and achieve measurable outcomes.
             </p>
           </motion.div>
 
@@ -190,7 +262,7 @@ export default function StoriesPage() {
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
                   type="text"
-                  placeholder="Search stories..."
+                  placeholder="Search case studies..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-10 pr-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
@@ -215,94 +287,155 @@ export default function StoriesPage() {
             </div>
           </motion.div>
 
-          {/* Stories Grid */}
+          {/* Case Studies Grid */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="space-y-12"
           >
-            {filteredStories.map((story) => (
+            {filteredStories.map((study) => (
               <motion.article
-                key={story.id}
+                key={study.id}
                 variants={itemVariants}
-                className="group bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
               >
-                {/* Image */}
-                <div className="relative h-52 bg-gradient-to-br from-blue-500/20 to-purple-500/20 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-purple-600/10 group-hover:opacity-0 transition-opacity duration-500" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
-                      <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                        {story.title.charAt(0)}
-                      </span>
-                    </div>
-                  </div>
-                  {/* Category Badge */}
-                  <div className="absolute top-3 right-3 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300">
-                    {story.category}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-3">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5" />
-                      <span>{story.date}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5" />
-                      <span>{story.readTime}</span>
-                    </div>
-                  </div>
-
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                    <Link href={`/stories/${story.id}`}>
-                      {story.title}
-                    </Link>
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 line-clamp-2 mb-4">
-                    {story.excerpt}
-                  </p>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {story.tags.slice(0, 3).map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-0.5 bg-gray-100 dark:bg-gray-700/50 rounded-full text-xs font-medium text-gray-600 dark:text-gray-400"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                    {story.tags.length > 3 && (
-                      <span className="px-2 py-0.5 text-xs font-medium text-gray-400 dark:text-gray-500">
-                        +{story.tags.length - 3}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Footer */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100 dark:border-gray-700">
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white text-xs font-bold">
-                        {story.author.charAt(0)}
+                <div className="p-6 md:p-8">
+                  {/* Header */}
+                  <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+                    <div>
+                      <div className="flex flex-wrap items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+                        <span className="px-2.5 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-xs font-medium">
+                          {study.category}
+                        </span>
+                        <span className="px-2.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded-full text-xs font-medium">
+                          {study.duration}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Calendar className="w-3.5 h-3.5" />
+                          {study.date}
+                        </span>
                       </div>
-                      <span className="text-sm text-gray-600 dark:text-gray-300">
-                        {story.author}
-                      </span>
+                      <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                        {study.title}
+                      </h2>
+                      <p className="text-gray-600 dark:text-gray-300 mt-2">
+                        {study.excerpt}
+                      </p>
                     </div>
                     <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
                       <div className="flex items-center gap-1">
-                        <Heart className="w-3.5 h-3.5" />
-                        <span>{story.likes}</span>
+                        <Heart className="w-4 h-4" />
+                        <span>{study.likes}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <MessageCircle className="w-3.5 h-3.5" />
-                        <span>{story.comments}</span>
+                        <MessageCircle className="w-4 h-4" />
+                        <span>{study.comments}</span>
                       </div>
                     </div>
+                  </div>
+
+                  {/* Key Info Tags */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {study.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2.5 py-0.5 bg-gray-100 dark:bg-gray-700/50 rounded-full text-xs font-medium text-gray-600 dark:text-gray-400"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Case Study Details */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Left Column */}
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider flex items-center gap-2">
+                          <Target className="w-4 h-4 text-blue-500" />
+                          Business Problem
+                        </h4>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">
+                          {study.businessProblem}
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider flex items-center gap-2">
+                          <Lightbulb className="w-4 h-4 text-yellow-500" />
+                          Discovery Process
+                        </h4>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">
+                          {study.discoveryProcess}
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider flex items-center gap-2">
+                          <BookOpen className="w-4 h-4 text-green-500" />
+                          Requirements
+                        </h4>
+                        <ul className="list-disc list-inside text-sm text-gray-600 dark:text-gray-300 mt-1 space-y-0.5">
+                          {study.requirements.map((req, i) => (
+                            <li key={i}>{req}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider flex items-center gap-2">
+                          <Rocket className="w-4 h-4 text-purple-500" />
+                          Solution
+                        </h4>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">
+                          {study.solution}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Right Column */}
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider flex items-center gap-2">
+                          <Briefcase className="w-4 h-4 text-orange-500" />
+                          Role Played
+                        </h4>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">
+                          {study.rolePlayed}
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider flex items-center gap-2">
+                          <TrendingUp className="w-4 h-4 text-green-500" />
+                          Business Outcome
+                        </h4>
+                        <ul className="list-disc list-inside text-sm text-gray-600 dark:text-gray-300 mt-1 space-y-0.5">
+                          {study.businessOutcome.map((outcome, i) => (
+                            <li key={i}>{outcome}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider flex items-center gap-2">
+                          <Tag className="w-4 h-4 text-red-500" />
+                          Lessons Learned
+                        </h4>
+                        <ul className="list-disc list-inside text-sm text-gray-600 dark:text-gray-300 mt-1 space-y-0.5">
+                          {study.lessonsLearned.map((lesson, i) => (
+                            <li key={i}>{lesson}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* View Full Case Study Link */}
+                  <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
+                    <Link
+                      href={`/stories/${study.id}`}
+                      className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium hover:gap-3 transition-all duration-300"
+                    >
+                      View Full Case Study
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </div>
                 </div>
               </motion.article>
@@ -317,7 +450,7 @@ export default function StoriesPage() {
               className="text-center py-12"
             >
               <p className="text-gray-500 dark:text-gray-400">
-                No stories found matching your criteria.
+                No case studies found matching your criteria.
               </p>
             </motion.div>
           )}
