@@ -1,6 +1,8 @@
 import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/home/Hero';
 import About from '@/components/home/About';
+import Industries from '@/components/home/Industries';
+import Philosophy from '@/components/home/Philosophy';
 import Services from '@/components/home/Services';
 import CaseStudies from '@/components/home/CaseStudies';
 import Framework from '@/components/home/Framework';
@@ -13,6 +15,8 @@ export default function Home() {
     <MainLayout>
       <Hero />
       <About />
+      <Industries />
+      <Philosophy />   {/* ← New section */}
       <Services />
       <CaseStudies />
       <Framework />
