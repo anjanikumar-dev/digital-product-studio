@@ -31,7 +31,7 @@ const testimonials: Testimonial[] = [
     role: 'CTO',
     company: 'TechCorp Inc.',
     avatar: 'SJ',
-    content: 'Working with this team was an absolute game-changer for our business. They transformed our outdated platform into a modern, scalable solution that our users love. Their attention to detail and commitment to quality is unmatched.',
+    content: 'Anjani Kumar transformed our outdated platform into a modern, scalable solution that our users love. His strategic thinking and attention to detail are unmatched. He truly understands how to bridge the gap between business needs and technical execution.',
     rating: 5,
     date: 'December 2024',
     project: 'HRMS Platform'
@@ -42,7 +42,7 @@ const testimonials: Testimonial[] = [
     role: 'VP of Engineering',
     company: 'EduTech Global',
     avatar: 'MC',
-    content: 'The level of expertise and professionalism demonstrated throughout the project was exceptional. They delivered our LMS platform ahead of schedule and exceeded all our expectations. Highly recommend!',
+    content: 'Working with Anjani was exceptional. He delivered our LMS platform ahead of schedule and exceeded all our expectations. His ability to translate complex requirements into a seamless user experience is impressive.',
     rating: 5,
     date: 'November 2024',
     project: 'Learning Management System'
@@ -53,7 +53,7 @@ const testimonials: Testimonial[] = [
     role: 'Director of Operations',
     company: 'Shopify Plus',
     avatar: 'ER',
-    content: 'Our e-commerce platform needed a complete overhaul, and they delivered beyond our wildest expectations. The new platform is faster, more intuitive, and has significantly increased our conversion rates.',
+    content: 'Anjani Kumar completely overhauled our e-commerce platform. The new system is faster, more intuitive, and has significantly increased our conversion rates. His strategic approach and technical expertise made all the difference.',
     rating: 5,
     date: 'October 2024',
     project: 'Commerce Platform'
@@ -64,21 +64,10 @@ const testimonials: Testimonial[] = [
     role: 'Head of Product',
     company: 'HealthTech Solutions',
     avatar: 'DK',
-    content: 'The team\'s ability to understand our complex healthcare requirements and translate them into a seamless user experience was impressive. They truly care about building products that make a difference.',
+    content: 'The team\'s ability to understand our complex healthcare requirements and translate them into a seamless user experience was impressive. Anjani truly cares about building products that make a difference.',
     rating: 5,
     date: 'September 2024',
     project: 'Healthcare Management Platform'
-  },
-  {
-    id: '5',
-    name: 'Lisa Thompson',
-    role: 'CEO',
-    company: 'Analytics Pro',
-    avatar: 'LT',
-    content: 'Working with this team was a pleasure from start to finish. They took our vague ideas and turned them into a powerful analytics platform that our clients absolutely love. Their strategic thinking is exceptional.',
-    rating: 5,
-    date: 'August 2024',
-    project: 'Analytics & BI Platform'
   }
 ];
 
