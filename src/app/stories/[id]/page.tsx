@@ -18,7 +18,11 @@ import {
   BookOpen,
   Tag,
   Share2,
-  CheckCircle
+  CheckCircle,
+  Building2,
+  Shield,
+  Users,
+  ArrowRight
 } from 'lucide-react';
 import MainLayout from '@/components/layout/MainLayout';
 import { caseStudies, CaseStudy } from '@/data/caseStudies';
@@ -65,6 +69,18 @@ export default function CaseStudyDetail() {
     },
   };
 
+  const getIndustryIcon = (industry: string) => {
+    const icons: { [key: string]: React.ReactNode } = {
+      'Public Sector': <Building2 className="w-5 h-5" />,
+      'Security': <Shield className="w-5 h-5" />,
+      'Enterprise Technology': <Users className="w-5 h-5" />,
+      'EdTech': <BookOpen className="w-5 h-5" />,
+      'Retail': <TrendingUp className="w-5 h-5" />,
+      'Data Analytics': <TrendingUp className="w-5 h-5" />,
+    };
+    return icons[industry] || <Briefcase className="w-5 h-5" />;
+  };
+
   return (
     <MainLayout>
       <section className="py-20 md:py-28 overflow-hidden">
@@ -95,6 +111,10 @@ export default function CaseStudyDetail() {
                 <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm font-medium text-gray-600 dark:text-gray-400">
                   {study.duration}
                 </span>
+                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm font-medium text-gray-600 dark:text-gray-400 flex items-center gap-1.5">
+                  {getIndustryIcon(study.industry)}
+                  {study.industry}
+                </span>
                 <span className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1">
                   <Calendar className="w-4 h-4" />
                   {study.date}
@@ -119,7 +139,7 @@ export default function CaseStudyDetail() {
               </div>
               <div>
                 <p className="font-semibold text-gray-900 dark:text-white">{study.author}</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">Business Analyst & Product Strategist</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Senior Business Analyst & Product Strategist</p>
               </div>
               <div className="ml-auto flex items-center gap-4 text-gray-500 dark:text-gray-400">
                 <div className="flex items-center gap-1">
@@ -136,7 +156,7 @@ export default function CaseStudyDetail() {
             {/* Case Study Content */}
             <motion.div variants={itemVariants} className="space-y-8">
               {/* Business Problem */}
-              <div className="bg-blue-50/50 dark:bg-blue-900/10 rounded-2xl p-6">
+              <div className="bg-blue-50/50 dark:bg-blue-900/10 rounded-2xl p-6 border border-blue-100 dark:border-blue-800/30">
                 <h2 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2 mb-3">
                   <Target className="w-5 h-5 text-blue-500" />
                   Business Problem
@@ -203,7 +223,7 @@ export default function CaseStudyDetail() {
               </div>
 
               {/* Challenges */}
-              <div className="bg-red-50/50 dark:bg-red-900/10 rounded-2xl p-6">
+              <div className="bg-red-50/50 dark:bg-red-900/10 rounded-2xl p-6 border border-red-100 dark:border-red-800/30">
                 <h2 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2 mb-3">
                   <Briefcase className="w-5 h-5 text-orange-500" />
                   Challenges Faced
@@ -219,7 +239,7 @@ export default function CaseStudyDetail() {
               </div>
 
               {/* Role Played */}
-              <div className="bg-purple-50/50 dark:bg-purple-900/10 rounded-2xl p-6">
+              <div className="bg-purple-50/50 dark:bg-purple-900/10 rounded-2xl p-6 border border-purple-100 dark:border-purple-800/30">
                 <h2 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2 mb-3">
                   <Briefcase className="w-5 h-5 text-purple-500" />
                   My Role
@@ -230,7 +250,7 @@ export default function CaseStudyDetail() {
               </div>
 
               {/* Business Outcome */}
-              <div className="bg-green-50/50 dark:bg-green-900/10 rounded-2xl p-6">
+              <div className="bg-green-50/50 dark:bg-green-900/10 rounded-2xl p-6 border border-green-100 dark:border-green-800/30">
                 <h2 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2 mb-3">
                   <TrendingUp className="w-5 h-5 text-green-500" />
                   Business Outcome
@@ -246,7 +266,7 @@ export default function CaseStudyDetail() {
               </div>
 
               {/* Lessons Learned */}
-              <div>
+              <div className="bg-yellow-50/50 dark:bg-yellow-900/10 rounded-2xl p-6 border border-yellow-100 dark:border-yellow-800/30">
                 <h2 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2 mb-3">
                   <BookOpen className="w-5 h-5 text-yellow-500" />
                   Lessons Learned
