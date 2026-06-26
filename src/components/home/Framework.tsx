@@ -103,7 +103,6 @@ const steps: FrameworkStep[] = [
 ];
 
 export default function Framework() {
-  // FIXED: No transition property
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -115,7 +114,6 @@ export default function Framework() {
     },
   };
 
-  // FIXED: No transition property
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
