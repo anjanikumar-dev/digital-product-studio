@@ -92,7 +92,6 @@ export default function CaseStudies() {
     ? projects 
     : projects.filter(p => p.category === filter);
 
-  // FIXED: No transition property
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -104,7 +103,6 @@ export default function CaseStudies() {
     },
   };
 
-  // FIXED: No transition property
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
