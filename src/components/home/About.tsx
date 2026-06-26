@@ -93,7 +93,7 @@ export default function About() {
   ];
 
   return (
-    <section className="py-20 md:py-28 overflow-hidden bg-white dark:bg-gray-900">
+    <section className="py-16 md:py-20 lg:py-16 overflow-hidden bg-gray-50/50 dark:bg-gray-800/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
@@ -123,7 +123,7 @@ export default function About() {
           </motion.div>
 
           {/* Main Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left Column - Bio & Metrics */}
             <motion.div variants={itemVariants} className="space-y-8">
               {/* Professional Bio */}

@@ -7,7 +7,7 @@ import Services from '@/components/home/Services';
 import CaseStudies from '@/components/home/CaseStudies';
 import Framework from '@/components/home/Framework';
 import Timeline from '@/components/home/Timeline';
-import Highlights from '@/components/home/Highlights';  // ← New import
+import Highlights from '@/components/home/Highlights';
 import CTA from '@/components/home/CTA';
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
       <CaseStudies />
       <Framework />
       <Timeline />
-      <Highlights />   {/* ← Replaces Testimonials */}
+      <Highlights />
       <CTA />
     </MainLayout>
   );

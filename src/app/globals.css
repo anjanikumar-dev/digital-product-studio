@@ -82,3 +82,44 @@ button {
 img {
   @apply max-w-full h-auto;
 }
+/* Desktop spacing optimizations */
+@media (min-width: 1024px) {
+  /* Reduce section padding on desktop */
+  section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  
+  /* Tighter hero on desktop */
+  .min-h-screen {
+    min-height: 90vh !important;
+  }
+  
+  /* Better container max-width for desktop */
+  .container {
+    max-width: 1400px !important;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+  
+  /* Tighter grid gaps */
+  .grid {
+    gap: 1.5rem !important;
+  }
+  
+  /* Reduce hero vertical padding */
+  .py-20 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  /* Better card density */
+  .gap-8 {
+    gap: 1.5rem !important;
+  }
+  
+  /* Two-column layouts better balanced */
+  .lg\\:gap-20 {
+    gap: 3rem !important;
+  }
+}
