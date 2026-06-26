@@ -1,7 +1,21 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ArrowRight, ChevronDown, Sparkles, Star, Users, TrendingUp } from 'lucide-react';
+import { 
+  ArrowRight, 
+  ChevronDown, 
+  Sparkles, 
+  Star, 
+  Users, 
+  TrendingUp,
+  Shield,
+  Building2,
+  GraduationCap,
+  Brain,
+  BarChart3,
+  ShoppingBag,
+  Briefcase
+} from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
@@ -31,10 +45,22 @@ export default function Hero() {
     },
   };
 
+  const specialties = [
+    { icon: <Briefcase className="w-4 h-4" />, label: 'Business Analysis' },
+    { icon: <TrendingUp className="w-4 h-4" />, label: 'Product Strategy' },
+    { icon: <Building2 className="w-4 h-4" />, label: 'Enterprise Design' },
+    { icon: <Shield className="w-4 h-4" />, label: 'Cyber Security' },
+    { icon: <GraduationCap className="w-4 h-4" />, label: 'LMS' },
+    { icon: <Users className="w-4 h-4" />, label: 'HRMS' },
+    { icon: <Brain className="w-4 h-4" />, label: 'AI Products' },
+    { icon: <BarChart3 className="w-4 h-4" />, label: 'Trading Solutions' },
+    { icon: <ShoppingBag className="w-4 h-4" />, label: 'E-Commerce' },
+  ];
+
   const stats = [
     { label: 'Product Health', value: '96%', icon: Star },
     { label: 'Client Satisfaction', value: '4.9 ★', icon: Users },
-    { label: 'Active Projects', value: '12+', icon: TrendingUp },
+    { label: 'Projects Delivered', value: '15+', icon: TrendingUp },
   ];
 
   return (
@@ -46,7 +72,7 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-20">
         <motion.div
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
           variants={containerVariants}
@@ -54,7 +80,7 @@ export default function Hero() {
           animate={isVisible ? 'visible' : 'hidden'}
         >
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             {/* Badge */}
             <motion.div
               variants={itemVariants}
@@ -83,8 +109,8 @@ export default function Hero() {
               variants={itemVariants}
               className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-lg leading-relaxed"
             >
-              Business Analyst &amp; Product Strategist with 12+ years of experience helping 
-              enterprises build products people actually love using.
+              Business Analyst &amp; Product Strategist specializing in enterprise solutions, 
+              AI products, and digital transformation across government, fintech, and enterprise sectors.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -107,25 +133,31 @@ export default function Hero() {
               </Link>
             </motion.div>
 
-            {/* Skills Chips */}
+            {/* Specialties Grid - IMMEDIATE VISIBILITY */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap gap-2 pt-4"
+              className="pt-2"
             >
-              {['Product Strategy', 'Business Analysis', 'UX Design', 'System Design', 'Agile'].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-3 py-1.5 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300"
-                >
-                  {skill}
-                </span>
-              ))}
+              <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">
+                Specializes In
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {specialties.map((item, index) => (
+                  <span
+                    key={index}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300 hover:border-blue-400 dark:hover:border-blue-600 transition-all duration-200 hover:shadow-md"
+                  >
+                    <span className="text-blue-500 dark:text-blue-400">{item.icon}</span>
+                    {item.label}
+                  </span>
+                ))}
+              </div>
             </motion.div>
 
             {/* Stats */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200 dark:border-gray-700"
+              className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200 dark:border-gray-700"
             >
               {stats.map((stat) => (
                 <div key={stat.label} className="space-y-1">
@@ -193,7 +225,7 @@ export default function Hero() {
                     { name: 'Security Platform', progress: 78, color: 'blue' },
                     { name: 'LMS Platform', progress: 45, color: 'purple' },
                     { name: 'HRMS System', progress: 92, color: 'green' },
-                    { name: 'Commerce', progress: 60, color: 'orange' },
+                    { name: 'Trading Platform', progress: 60, color: 'orange' },
                   ].map((project) => (
                     <div
                       key={project.name}
