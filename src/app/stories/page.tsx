@@ -15,13 +15,17 @@ import {
   Rocket,
   TrendingUp,
   BookOpen,
-  Tag
+  Tag,
+  Building2,
+  Shield,
+  Users,
+  CheckCircle
 } from 'lucide-react';
 import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
 import { caseStudies } from '@/data/caseStudies';
 
-const categories = ['All', 'Enterprise HR', 'EdTech', 'E-Commerce', 'Data & Analytics'];
+const categories = ['All', 'Government', 'Cyber Security', 'Enterprise HR', 'EdTech', 'E-Commerce', 'Data & Analytics'];
 
 export default function CaseStudiesPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -54,6 +58,18 @@ export default function CaseStudiesPage() {
     },
   };
 
+  const getIndustryIcon = (industry: string) => {
+    const icons: { [key: string]: React.ReactNode } = {
+      'Public Sector': <Building2 className="w-4 h-4" />,
+      'Security': <Shield className="w-4 h-4" />,
+      'Enterprise Technology': <Users className="w-4 h-4" />,
+      'EdTech': <BookOpen className="w-4 h-4" />,
+      'Retail': <TrendingUp className="w-4 h-4" />,
+      'Data Analytics': <TrendingUp className="w-4 h-4" />,
+    };
+    return icons[industry] || <Briefcase className="w-4 h-4" />;
+  };
+
   return (
     <MainLayout>
       <section className="py-20 md:py-28 overflow-hidden">
@@ -65,19 +81,18 @@ export default function CaseStudiesPage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
-            // Find the header section and update the subheading
-<span className="inline-block text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
-  Case Studies
-</span>
-<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-  Real Projects Delivered by{' '}
-  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-    Anjani Kumar
-  </span>
-</h1>
-<p className="text-lg text-gray-600 dark:text-gray-300">
-  Explore how I've helped enterprises solve complex challenges and achieve measurable outcomes.
-</p>
+            <span className="inline-block text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
+              Case Studies
+            </span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              Real Projects Delivered by{' '}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Anjani Kumar
+              </span>
+            </h1>
+            <p className="text-lg text-gray-600 dark:text-gray-300">
+              Explore how I've helped enterprises solve complex challenges and achieve measurable outcomes.
+            </p>
           </motion.div>
 
           {/* Search and Filter */}
@@ -128,7 +143,7 @@ export default function CaseStudiesPage() {
               <motion.article
                 key={study.id}
                 variants={itemVariants}
-                className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
+                className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border border-gray-100 dark:border-gray-700"
               >
                 <div className="p-6 md:p-8">
                   {/* Header */}
