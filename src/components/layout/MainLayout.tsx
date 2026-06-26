@@ -9,7 +9,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <>
       <Navbar />
-      <main className="pt-16">{children}</main>
+      <main className="pt-16 min-h-screen">{children}</main>
       <Footer />
     </>
   );
