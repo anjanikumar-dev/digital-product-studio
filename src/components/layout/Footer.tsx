@@ -64,8 +64,7 @@ export default function Footer() {
     visible: {
       opacity: 1,
       y: 0,
-      //transition: { duration: 0.4 }
-    }
+    },
   };
 
   const sections = [
@@ -85,6 +84,7 @@ export default function Footer() {
       title: 'Services',
       links: [
         { label: 'Product Strategy', href: '/services/product-strategy' },
+        { label: 'Business Analysis', href: '/services/business-analysis' },
         { label: 'UX Design', href: '/services/ux-design' },
         { label: 'System Design', href: '/services/system-design' },
         { label: 'Agile Delivery', href: '/services/agile-delivery' },
@@ -132,8 +132,8 @@ export default function Footer() {
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2 text-gray-400">
                 <Mail className="w-4 h-4 text-blue-400" />
-                <a href="mailto:hello@digitalproductstudio.com" className="hover:text-white transition-colors">
-                  hello@digitalproductstudio.com
+                <a href="mailto:anjanikumar.dev@gmail.com" className="hover:text-white transition-colors">
+                  anjanikumar.dev@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2 text-gray-400">
@@ -191,7 +191,7 @@ export default function Footer() {
         >
           {/* Copyright */}
           <p className="text-sm text-gray-500">
-            © {new Date().getFullYear()} Digital Product Studio. 
+            © {new Date().getFullYear()} Digital Product Studio — Built by Anjani Kumar.
             Made with <Heart className="w-3.5 h-3.5 inline text-red-500 animate-pulse" /> 
             and <Sparkles className="w-3.5 h-3.5 inline text-blue-400" /> 
             for great digital experiences.
