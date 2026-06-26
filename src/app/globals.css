@@ -1,6 +1,15 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Custom styles below */
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+/* Gradient Animation */
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -52,4 +61,24 @@
 .dark ::selection {
   background-color: #3b82f6;
   color: white;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold tracking-tight;
+}
+
+/* Link styles */
+a {
+  @apply transition-colors duration-200;
+}
+
+/* Button reset */
+button {
+  @apply cursor-pointer;
+}
+
+/* Image optimization */
+img {
+  @apply max-w-full h-auto;
 }

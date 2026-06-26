@@ -28,7 +28,6 @@ export default function Hero() {
     visible: {
       opacity: 1,
       y: 0,
-      
     },
   };
 
@@ -71,12 +70,12 @@ export default function Hero() {
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight"
             >
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent bg-size-200 animate-gradient">
-                Digital Products
+                Anjani Kumar
               </span>
               <br />
-              <span className="text-gray-900 dark:text-white">people actually</span>
+              <span className="text-gray-900 dark:text-white">turns complex problems</span>
               <br />
-              <span className="text-gray-900 dark:text-white">love using.</span>
+              <span className="text-gray-900 dark:text-white">into digital products.</span>
             </motion.h1>
 
             {/* Description */}
@@ -84,8 +83,8 @@ export default function Hero() {
               variants={itemVariants}
               className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-lg leading-relaxed"
             >
-              Business Analyst focused on transforming complex business challenges 
-              into scalable digital products through strategy, UX thinking, and modern technology.
+              Business Analyst &amp; Product Strategist with 12+ years of experience helping 
+              enterprises build products people actually love using.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -113,7 +112,7 @@ export default function Hero() {
               variants={itemVariants}
               className="flex flex-wrap gap-2 pt-4"
             >
-              {['Product Strategy', 'UX Design', 'System Design', 'Agile'].map((skill) => (
+              {['Product Strategy', 'Business Analysis', 'UX Design', 'System Design', 'Agile'].map((skill) => (
                 <span
                   key={skill}
                   className="px-3 py-1.5 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300"

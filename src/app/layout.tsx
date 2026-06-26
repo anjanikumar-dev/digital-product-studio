@@ -2,8 +2,18 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Digital Product Studio",
-  description: "Turning Ideas into Digital Products",
+  title: "Anjani Kumar | Digital Product Studio",
+  description: "Business Analyst & Product Strategist helping enterprises turn complex challenges into digital products people love using.",
+  keywords: "Business Analyst, Product Strategist, Digital Products, UX Design, System Design, Agile Delivery",
+  authors: [{ name: "Anjani Kumar" }],
+  openGraph: {
+    title: "Anjani Kumar | Digital Product Studio",
+    description: "Business Analyst & Product Strategist helping enterprises turn complex challenges into digital products people love using.",
+    url: "https://digital-product-studio.netlify.app",
+    siteName: "Digital Product Studio",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -13,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>{children}</body>
+      <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }
