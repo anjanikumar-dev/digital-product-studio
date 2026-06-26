@@ -11,8 +11,12 @@ import {
   Clock,
   User,
   Building2,
-  MessageSquare
+  MessageSquare,
+  Briefcase,
+  Users,
+  Sparkles
 } from 'lucide-react';
+import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
 
 export default function ContactPage() {
@@ -37,7 +41,6 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -70,8 +73,8 @@ export default function ContactPage() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@digitalproductstudio.com',
-      link: 'mailto:hello@digitalproductstudio.com'
+      value: 'anjanikumar.dev@gmail.com',
+      link: 'mailto:anjanikumar.dev@gmail.com'
     },
     {
       icon: Phone,
@@ -88,9 +91,15 @@ export default function ContactPage() {
     {
       icon: Clock,
       label: 'Response Time',
-      value: '24-48 hours',
+      value: 'Within 24 hours',
       link: null
     }
+  ];
+
+  const engagementTypes = [
+    { icon: <Briefcase className="w-4 h-4" />, label: 'Freelance Consulting' },
+    { icon: <Users className="w-4 h-4" />, label: 'Product Discovery' },
+    { icon: <Sparkles className="w-4 h-4" />, label: 'Full-Time Product Leadership' },
   ];
 
   return (
@@ -105,17 +114,17 @@ export default function ContactPage() {
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <span className="inline-block text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
-  Get in Touch
-</span>
-<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-  Work with{' '}
-  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-    Anjani Kumar
-  </span>
-</h1>
-<p className="text-lg text-gray-600 dark:text-gray-300">
-  Have a project in mind? Let's discuss how I can help bring your vision to life.
-</p>
+              Get in Touch
+            </span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              Work with{' '}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Anjani Kumar
+              </span>
+            </h1>
+            <p className="text-lg text-gray-600 dark:text-gray-300">
+              Have a project in mind? Let's discuss how I can help bring your vision to life.
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -126,7 +135,7 @@ export default function ContactPage() {
               animate="visible"
               className="lg:col-span-1"
             >
-              <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg h-full">
+              <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg h-full border border-gray-100 dark:border-gray-700">
                 <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
                   Contact Information
                 </h2>
@@ -162,16 +171,34 @@ export default function ContactPage() {
                   ))}
                 </div>
 
-                {/* Availability */}
+                {/* Engagement Types */}
                 <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+                    Engagement Types
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {engagementTypes.map((type, index) => (
+                      <span
+                        key={index}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 dark:bg-gray-700/50 rounded-full text-xs font-medium text-gray-700 dark:text-gray-300"
+                      >
+                        {type.icon}
+                        {type.label}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Availability */}
+                <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
                   <div className="flex items-center gap-2 text-sm">
                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                     <span className="text-gray-600 dark:text-gray-300">
-                      Available for Freelance & Full-Time
+                      Available for Consulting
                     </span>
                   </div>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                    I respond within 24-48 hours
+                    I respond within 24 hours
                   </p>
                 </div>
               </div>
@@ -184,7 +211,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="lg:col-span-2"
             >
-              <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-8 shadow-lg">
+              <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100 dark:border-gray-700">
                 {isSubmitted ? (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -198,7 +225,7 @@ export default function ContactPage() {
                       Message Sent!
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300">
-                      Thank you for reaching out. I'll get back to you within 24-48 hours.
+                      Thank you for reaching out. I'll get back to you within 24 hours.
                     </p>
                     <button
                       onClick={() => setIsSubmitted(false)}
@@ -282,7 +309,8 @@ export default function ContactPage() {
                           <option value="5k-10k">$5,000 - $10,000</option>
                           <option value="10k-25k">$10,000 - $25,000</option>
                           <option value="25k-50k">$25,000 - $50,000</option>
-                          <option value="50k+">$50,000+</option>
+                          <option value="50k-100k">$50,000 - $100,000</option>
+                          <option value="100k+">$100,000+</option>
                         </select>
                       </div>
                       <div>
@@ -319,7 +347,7 @@ export default function ContactPage() {
                           required
                           rows={5}
                           className="w-full pl-10 pr-4 py-2.5 bg-gray-50 dark:bg-gray-700/50 border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors resize-none"
-                          placeholder="Tell me about your project..."
+                          placeholder="Tell me about your project... What problem are you trying to solve?"
                         />
                       </div>
                     </div>
@@ -343,7 +371,7 @@ export default function ContactPage() {
                     </button>
 
                     <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-                      By submitting this form, you agree to receive a response within 24-48 hours.
+                      By submitting this form, you agree to receive a response within 24 hours.
                       Your information will be kept confidential.
                     </p>
                   </form>
