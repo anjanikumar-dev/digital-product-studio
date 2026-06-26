@@ -9,7 +9,11 @@ import {
   Rocket, 
   TrendingUp,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
+  Target,
+  Lightbulb,
+  ClipboardCheck,
+  BookOpen
 } from 'lucide-react';
 import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
@@ -20,8 +24,10 @@ interface FrameworkStep {
   description: string;
   icon: React.ReactNode;
   color: string;
-  details: string[];
-  phase: string;
+  objective: string;
+  deliverables: string[];
+  bestPractices: string[];
+  example: string;
 }
 
 const steps: FrameworkStep[] = [
@@ -31,14 +37,20 @@ const steps: FrameworkStep[] = [
     description: 'Understanding the problem space, user needs, and business goals.',
     icon: <Search className="w-8 h-8" />,
     color: 'from-blue-500 to-blue-600',
-    phase: 'Phase 1',
-    details: [
-      'Conduct user research and interviews',
-      'Analyze market trends and competitors',
-      'Identify pain points and opportunities',
-      'Define user personas and scenarios',
-      'Stakeholder alignment workshops'
-    ]
+    objective: 'Identify the real business problem and understand user needs before defining requirements.',
+    deliverables: [
+      'Stakeholder interview summaries',
+      'User research findings',
+      'Competitive analysis report',
+      'Business problem statement'
+    ],
+    bestPractices: [
+      'Interview stakeholders from all levels',
+      'Observe users in their environment',
+      'Focus on problems, not solutions',
+      'Document assumptions and validate them'
+    ],
+    example: 'Government Platform: Conducted 25+ interviews across departments, identified 8 key pain points that became the foundation for the platform requirements.'
   },
   {
     id: 'define',
@@ -46,14 +58,20 @@ const steps: FrameworkStep[] = [
     description: 'Translating insights into clear requirements and product vision.',
     icon: <FileText className="w-8 h-8" />,
     color: 'from-indigo-500 to-indigo-600',
-    phase: 'Phase 2',
-    details: [
-      'Create detailed user personas',
-      'Prioritize features and requirements',
-      'Develop product roadmap',
-      'Define success metrics and KPIs',
-      'Validate assumptions with stakeholders'
-    ]
+    objective: 'Translate insights into clear, actionable requirements that guide development.',
+    deliverables: [
+      'User personas',
+      'Feature roadmap',
+      'Business requirements document',
+      'Success metrics definition'
+    ],
+    bestPractices: [
+      'Prioritize features by business value',
+      'Define success metrics before development',
+      'Validate requirements with stakeholders',
+      'Keep requirements clear and unambiguous'
+    ],
+    example: 'HRMS Platform: Defined 50+ user stories across 6 modules, prioritized by business impact, resulting in 60% reduction in HR admin time.'
   },
   {
     id: 'design',
@@ -61,14 +79,20 @@ const steps: FrameworkStep[] = [
     description: 'Creating intuitive user experiences and beautiful interfaces.',
     icon: <Palette className="w-8 h-8" />,
     color: 'from-purple-500 to-purple-600',
-    phase: 'Phase 3',
-    details: [
-      'Create wireframes and prototypes',
-      'Design high-fidelity UI',
-      'Build design system',
-      'Conduct user testing sessions',
-      'Iterate based on feedback'
-    ]
+    objective: 'Design user experiences that solve real problems and delight users.',
+    deliverables: [
+      'Wireframes and prototypes',
+      'User journey maps',
+      'Design system components',
+      'Usability test findings'
+    ],
+    bestPractices: [
+      'Design for the user, not the stakeholder',
+      'Test designs with real users early',
+      'Keep it simple—complexity is the enemy of usability',
+      'Document design decisions'
+    ],
+    example: 'Commerce Platform: User testing with 50+ users revealed checkout friction—redesigned flow increased conversion rate by 3x.'
   },
   {
     id: 'develop',
@@ -76,14 +100,20 @@ const steps: FrameworkStep[] = [
     description: 'Building scalable, performant, and maintainable solutions.',
     icon: <Code className="w-8 h-8" />,
     color: 'from-pink-500 to-pink-600',
-    phase: 'Phase 4',
-    details: [
-      'Agile development sprints',
-      'CI/CD pipeline setup',
-      'Code reviews and testing',
-      'Performance optimization',
-      'Security implementation'
-    ]
+    objective: 'Build solutions that are scalable, maintainable, and deliver business value.',
+    deliverables: [
+      'Working software in production',
+      'Technical documentation',
+      'Test coverage reports',
+      'Deployment pipeline'
+    ],
+    bestPractices: [
+      'Write code for the maintainer (future you)',
+      'Test early, test often',
+      'Deploy small, deploy often',
+      'Balance speed with quality'
+    ],
+    example: 'LMS Platform: Built with scalability in mind—now serving 100,000+ users with 99.9% uptime and 85% course completion rate.'
   },
   {
     id: 'deploy',
@@ -91,14 +121,20 @@ const steps: FrameworkStep[] = [
     description: 'Launching products with confidence and minimal disruption.',
     icon: <Rocket className="w-8 h-8" />,
     color: 'from-orange-500 to-orange-600',
-    phase: 'Phase 5',
-    details: [
-      'DevOps and infrastructure setup',
-      'Migration planning and execution',
-      'Monitoring and logging implementation',
-      'Performance and load testing',
-      'Go-live and launch support'
-    ]
+    objective: 'Deploy with confidence, minimize disruption, and ensure smooth adoption.',
+    deliverables: [
+      'Deployment plan',
+      'Migration strategy',
+      'Rollback procedures',
+      'Training materials'
+    ],
+    bestPractices: [
+      'Deploy during low-traffic periods',
+      'Have a rollback plan ready',
+      'Monitor everything post-deploy',
+      'Communicate changes to all stakeholders'
+    ],
+    example: 'Cyber Security Platform: Deployed with zero downtime, achieved 99.9% uptime from day one, with 1000+ concurrent users.'
   },
   {
     id: 'drive',
@@ -106,14 +142,20 @@ const steps: FrameworkStep[] = [
     description: 'Continuous improvement based on data and user feedback.',
     icon: <TrendingUp className="w-8 h-8" />,
     color: 'from-green-500 to-green-600',
-    phase: 'Phase 6',
-    details: [
-      'Analytics and metrics tracking',
-      'A/B testing and experimentation',
-      'Iterative improvements',
-      'User feedback collection and analysis',
-      'Continuous optimization roadmap'
-    ]
+    objective: 'Continuously improve based on data, user feedback, and business outcomes.',
+    deliverables: [
+      'Analytics dashboard',
+      'A/B test results',
+      'User feedback reports',
+      'Optimization roadmap'
+    ],
+    bestPractices: [
+      'Let data guide decisions, not opinions',
+      'Talk to users regularly',
+      'Celebrate successes, learn from failures',
+      'Never stop improving'
+    ],
+    example: 'E-Commerce Platform: A/B testing revealed 20% better conversion with personalized recommendations—permanently implemented the winning variation.'
   }
 ];
 
@@ -149,20 +191,16 @@ export default function FrameworkPage() {
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <span className="inline-block text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
-  Methodology
-</span>
-<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-  The{' '}
-  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-    6D Framework
-  </span>
-  <br />
-  <span className="text-lg text-gray-600 dark:text-gray-300 font-normal">
-    by Anjani Kumar
-  </span>
-</h1>
+              Methodology by Anjani Kumar
+            </span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              The{' '}
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                6D Framework
+              </span>
+            </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              A comprehensive approach to building digital products that deliver real business value.
+              A comprehensive, proven approach to building digital products that deliver real business value.
             </p>
           </motion.div>
 
@@ -213,39 +251,91 @@ export default function FrameworkPage() {
               <motion.div
                 key={step.id}
                 variants={itemVariants}
-                className="bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500"
+                className="bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-700"
               >
-                <div className="flex flex-col md:flex-row gap-6">
-                  {/* Step Number & Icon */}
-                  <div className="md:w-48 flex-shrink-0">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-sm font-semibold text-blue-600 dark:text-blue-400">
-                        {step.phase}
-                      </span>
-                      <span className="text-xs text-gray-400 dark:text-gray-500">
-                        Step {index + 1}/6
-                      </span>
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+                  {/* Left: Icon & Title */}
+                  <div className="lg:col-span-1">
+                    <div className="flex items-center gap-3 lg:block">
+                      <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${step.color} text-white shadow-lg mb-3`}>
+                        {step.icon}
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-blue-600 dark:text-blue-400">
+                          Phase {index + 1}/6
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                          {step.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+                          {step.description}
+                        </p>
+                      </div>
                     </div>
-                    <div className={`inline-flex p-3 rounded-2xl bg-gradient-to-r ${step.color} text-white shadow-lg`}>
-                      {step.icon}
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mt-3">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
-                      {step.description}
-                    </p>
                   </div>
 
-                  {/* Details */}
-                  <div className="flex-1">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {step.details.map((detail, i) => (
-                        <div key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-300">
-                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
-                          {detail}
+                  {/* Right: Details */}
+                  <div className="lg:col-span-4 space-y-4">
+                    {/* Objective */}
+                    <div className="bg-blue-50/50 dark:bg-blue-900/10 rounded-lg p-4">
+                      <div className="flex items-start gap-2">
+                        <Target className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">Objective</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-300">{step.objective}</p>
                         </div>
-                      ))}
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {/* Deliverables */}
+                      <div className="bg-gray-50/50 dark:bg-gray-700/20 rounded-lg p-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <ClipboardCheck className="w-4 h-4 text-purple-500" />
+                          <p className="text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+                            Deliverables
+                          </p>
+                        </div>
+                        <ul className="space-y-1.5">
+                          {step.deliverables.map((item, i) => (
+                            <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+                              <CheckCircle className="w-3.5 h-3.5 text-green-500 flex-shrink-0 mt-0.5" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Best Practices */}
+                      <div className="bg-gray-50/50 dark:bg-gray-700/20 rounded-lg p-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Lightbulb className="w-4 h-4 text-yellow-500" />
+                          <p className="text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+                            Best Practices
+                          </p>
+                        </div>
+                        <ul className="space-y-1.5">
+                          {step.bestPractices.map((item, i) => (
+                            <li key={i} className="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
+                              <CheckCircle className="w-3.5 h-3.5 text-blue-500 flex-shrink-0 mt-0.5" />
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Real Example */}
+                      <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/10 dark:to-purple-900/10 rounded-lg p-4">
+                        <div className="flex items-center gap-2 mb-2">
+                          <BookOpen className="w-4 h-4 text-green-500" />
+                          <p className="text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+                            Real Example
+                          </p>
+                        </div>
+                        <p className="text-sm text-gray-600 dark:text-gray-300 italic">
+                          {step.example}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
