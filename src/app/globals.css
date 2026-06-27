@@ -82,6 +82,7 @@ button {
 img {
   @apply max-w-full h-auto;
 }
+
 /* Desktop spacing optimizations */
 @media (min-width: 1024px) {
   /* Reduce section padding on desktop */
@@ -122,4 +123,26 @@ img {
   .lg\\:gap-20 {
     gap: 3rem !important;
   }
+}
+
+/* Force footer to bottom - MOVED OUTSIDE THE MEDIA QUERY */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#__next > main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
 }
