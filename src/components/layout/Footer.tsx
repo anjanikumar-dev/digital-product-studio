@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { 
   Mail,
   MapPin,
+  Phone,
   ArrowUp,
   Heart,
   Sparkles
@@ -128,17 +129,23 @@ export default function Footer() {
             </p>
             
             <div className="space-y-2 text-sm">
-              <div className="flex items-center gap-2 text-gray-400">
-                <Mail className="w-4 h-4 text-blue-400" />
-                <a href="mailto:anjanikumar.dev@gmail.com" className="hover:text-white transition-colors">
-                  anjanikumar.dev@gmail.com
-                </a>
-              </div>
-              <div className="flex items-center gap-2 text-gray-400">
-                <MapPin className="w-4 h-4 text-blue-400" />
-                <span>Available Worldwide</span>
-              </div>
-            </div>
+  <div className="flex items-center gap-2 text-gray-400">
+    <Mail className="w-4 h-4 text-blue-400" />
+    <a href="mailto:anjanib31@gmail.com" className="hover:text-white transition-colors">
+      anjanib31@gmail.com
+    </a>
+  </div>
+  <div className="flex items-center gap-2 text-gray-400">
+    <Phone className="w-4 h-4 text-blue-400" />
+    <a href="tel:+919889339926" className="hover:text-white transition-colors">
+      +91 98893 39926
+    </a>
+  </div>
+  <div className="flex items-center gap-2 text-gray-400">
+    <MapPin className="w-4 h-4 text-blue-400" />
+    <span>Noida, India</span>
+  </div>
+</div>
 
             <div className="flex gap-3 mt-6">
               {socialLinks.map((social) => (

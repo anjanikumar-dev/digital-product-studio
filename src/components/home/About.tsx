@@ -137,6 +137,7 @@ export default function About() {
                     <p className="text-sm text-gray-500 dark:text-gray-400">
                       Senior Business Analyst &amp; Product Strategist
                     </p>
+                    <p className="text-xs text-gray-400 dark:text-gray-500"></p>
                   </div>
                 </div>
                 

@@ -73,19 +73,19 @@ export default function ContactPage() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'anjanikumar.dev@gmail.com',
-      link: 'mailto:anjanikumar.dev@gmail.com'
+      value: 'anjanib31@gmail.com',
+      link: 'mailto:anjanib31@gmail.com'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      value: '+91 9889339926',
+      link: 'tel:+919889339926'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Available Worldwide',
+      value: 'Noida, India',
       link: null
     },
     {
