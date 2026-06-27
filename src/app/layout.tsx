@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Anjani Kumar | Digital Product Studio",
@@ -23,9 +24,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white" suppressHydrationWarning>
-        {children}
-      </body>
+      <body
+  className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+  suppressHydrationWarning
+>
+  {children}
+
+  <GoogleAnalytics gaId="G-J7T77XLRXF" />
+</body>
     </html>
   );
 }
